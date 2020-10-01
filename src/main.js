@@ -15,7 +15,7 @@ import "./mock";
 
 import bootstrap from "./core/bootstrap";
 import "./core/lazy_use";
-
+import "./permission";
 import "./utils/filter"; // global filter
 
 Vue.config.productionTip = false;

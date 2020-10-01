@@ -1,5 +1,5 @@
 const getters = {
-  device: state => state.app.device
+  wechatId: state => state.wechat.wechat.openId
 };
 
 export default getters;

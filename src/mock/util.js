@@ -44,5 +44,20 @@ export const getQueryParameters = options => {
 };
 
 export const getBody = options => {
-  return options.body && JSON.parse(options.body);
+  if (options.body) {
+    try {
+      return JSON.parse(options.body);
+    } catch (err) {
+      return JSON.parse(
+        '{"' +
+          decodeURIComponent(options.body)
+            .replace(/"/g, '\\"')
+            .replace(/&/g, '","')
+            .replace(/=/g, '":"') +
+          '"}'
+      );
+    }
+  } else {
+    return {};
+  }
 };

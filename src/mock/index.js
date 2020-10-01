@@ -14,7 +14,8 @@ if (
   console.log("mock mounting");
   const Mock = require("mockjs2");
 
-  require("./services/auth");
+  require("./services/wechat");
+  require("./services/user");
 
   Mock.setup({
     timeout: 800 // setter delay time
